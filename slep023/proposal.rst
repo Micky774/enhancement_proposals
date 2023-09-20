@@ -24,7 +24,7 @@ For many estimators (see `Implementation`_), a dominant bottleneck for
 computation over many samples is distance computation. Currently, any distance
 calculated using the ``DistanceMetric`` back-end is completed through repeated
 calls to ``DistanceMetric.dist`` which operates on a pair of sample vectors. These
-distance calculations can be understood as a series of parallel arithmetic
+distance calculations is a series of parallel arithmetic
 operations with some reduction which are currently implemented as scalar loops in
 Cython/C. These parallel arithmetic operations occur on data contiguous in memory,
 and hence are well-suited to SIMD optimization. For modern hardware, leveraging
